@@ -1,0 +1,89 @@
+@import "~@blueprintjs/core/dist/blueprint.css";
+@import "~@blueprintjs/core/dist/variables";
+
+.center-text {
+  text-align: center;
+}
+
+.search-screen {
+  .search-panel {
+    .search-group {
+      justify-content: center;
+
+      input, button {
+        height: 60px;
+        font-size: xx-large;
+      }
+    }
+
+    margin-bottom: 2rem;
+  }
+
+  .explanation {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: large;
+  }
+
+  .search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .search-result {
+      width: 40rem;
+      padding: 5px 10px;
+      display: flex;
+      background-color: white;
+      justify-content: flex-start;
+
+      &:first-child {
+        border-top-left-radius: $pt-border-radius;
+        border-top-right-radius: $pt-border-radius;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: $pt-border-radius;
+        border-bottom-right-radius: $pt-border-radius;
+        border-bottom-width: 1px;
+      }
+
+      border: 1px solid $light-gray1;
+      border-bottom-width: 0px;
+
+      .kanji {
+        display: flex;
+        font-size: 3rem;
+        justify-content: center;
+        width: 25%;
+        align-items: center;
+
+        &:hover {
+          cursor: pointer;
+          color: $light-gray1;
+        }
+      }
+
+      .right-panel {
+        display: flex;
+        width: 75%;
+        flex-direction: column;
+        justify-content: space-between;
+        // border-left: 1px solid $light-gray1;
+        // padding-left: 1rem;
+
+        .description-line {
+          display: flex;
+
+          .caret {
+            color: $light-gray2;
+          }
+
+          .none {
+            color: $gray3;
+          }
+        }
+      }
+    }
+  }
+}
