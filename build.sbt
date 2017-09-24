@@ -15,3 +15,12 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies += guice
+
+enablePlugins(DockerPlugin)
+
+mappings.in(Universal) ++= Seq(
+  file("data/kanjidic_comb_utf8_fixed") -> "data/kanjidic_comb_utf8_fixed",
+  file("data/stroke_ulrich") -> "data/stroke_ulrich"
+)
+
+version in Docker := "1.0.0"
