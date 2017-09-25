@@ -27,5 +27,9 @@ class KanjiSpec extends PlaySpec {
       KanjiAnalysis.findSimilar("壁", SearchData(false)).items.map(_.value) must contain("璧")
       KanjiAnalysis.findSimilar("壁", SearchData(true)).items.map(_.value) must not contain "璧"
     }
+
+    "always return 10 results" in {
+      getSimilar("山").size mustEqual 10
+    }
   }
 }

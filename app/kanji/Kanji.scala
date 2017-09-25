@@ -30,14 +30,17 @@ object KanjiAnalysis {
   def findSimilar(kanji: String, searchData: SearchData): SimilarKanji = {
     val dicMap = if (searchData.onlyCommon) KanjiDic.commonKanjiDicMap else KanjiDic.allKanjiDicMap
 
-    val result = dicMap.keys.map { other => ScoredKanji(other, score(kanji, other), dicMap.get(other)) }
-      .filter { _.score < 0.5 }
-      .filter { _.value != kanji }
-      .toSeq
-      .sorted
-      .take(10)
+    KanjiDic.allKanjiDicMap.get(kanji) match {
+      case None => SimilarKanji(Nil)
+      case Some(_) =>
+        val result = dicMap.keys.map { other => ScoredKanji(other, score(kanji, other), dicMap.get(other)) }
+          .filter { _.value != kanji }
+          .toSeq
+          .sorted
+          .take(10)
+        SimilarKanji(result)
+    }
 
-    SimilarKanji(result)
   }
 
   def score(from: String, to: String): Double = {

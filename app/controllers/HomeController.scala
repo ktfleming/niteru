@@ -22,12 +22,10 @@ class HomeController @Inject()(override val controllerComponents: ControllerComp
 
   def similar(kanji: String) = Action.async { implicit request =>
     Future {
-
       searchForm.bindFromRequest.fold(
         formWithErrors => BadRequest(formWithErrors.errorsAsJson),
         searchData => {
-          val similar = KanjiAnalysis.findSimilar(kanji, searchData)
-          Ok(Json.toJson(similar))
+          Ok(Json.toJson(KanjiAnalysis.findSimilar(kanji, searchData)))
         }
       )
 
