@@ -16,7 +16,6 @@ interface SearchPanelProps extends InjectedFormProps<SearchFormData, {}> {
 class SearchPanel extends React.Component<SearchPanelProps> {
     protected onSubmit = (values: SearchFormData) => {
         dispatch(doSearch(values.query));
-        this.props.reset();
     }
 
     public render() {
