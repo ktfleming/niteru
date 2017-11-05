@@ -23,7 +23,7 @@ class KanjiSpec extends PlaySpec {
       KanjiAnalysis.findSimilar("test", SearchData(false)).items must equal(Nil)
     }
 
-    "filter our uncommon kanjis when onlyCommon=true" in {
+    "filter our uncommon kanji when onlyCommon=true" in {
       KanjiAnalysis.findSimilar("壁", SearchData(false)).items.map(_.value) must contain("璧")
       KanjiAnalysis.findSimilar("壁", SearchData(true)).items.map(_.value) must not contain "璧"
     }

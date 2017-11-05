@@ -25,8 +25,9 @@ class SearchPanel extends React.Component<SearchPanelProps> {
             <form className="search-panel" onSubmit={handleSubmit(this.onSubmit)}>
                 <div className="pt-control-group search-group">
                     <Field component={TextFieldInput}
+                           placeholder="猫"
                            name="query" />
-                    <Button type="submit" className="pt-button pt-large">Go</Button>
+                    <Button type="submit" className="pt-button pt-large">Search</Button>
                 </div>
             </form>
         );
