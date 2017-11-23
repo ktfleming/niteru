@@ -16,7 +16,7 @@ export class TextFieldInput extends React.Component<TextFieldInputProps, {}> {
         const { input, placeholder, readOnly } = this.props;
         return (
                 <FormControl {...input}
-                             className="pt-input pt-large"
+                             className=""
                              readOnly={readOnly}
                              type={"text"}
                              placeholder={placeholder} />

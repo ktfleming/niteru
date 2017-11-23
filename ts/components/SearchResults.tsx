@@ -3,8 +3,9 @@ import {Kanji} from "../types/kanji";
 import {connect} from "react-redux";
 import {GlobalState} from "../reducers/index";
 import {SearchResult} from "./SearchResult";
-import {Spinner} from "@blueprintjs/core";
 import CSSProperties = React.CSSProperties;
+import { Col, Row } from "react-bootstrap";
+import * as Spinner from "react-spinkit";
 
 interface SearchResultsProps {
     results?: Kanji[];
@@ -17,13 +18,17 @@ class SearchResults extends React.Component<SearchResultsProps, {}> {
         if (loading) {
             return (
                 <div className="search-results">
-                    <Spinner />
+                    <Spinner name="double-bounce" className="spinner"/>
                 </div>
             )
         } else {
             return (
                 <div className="search-results">
-                    { results.map((result, index) => <SearchResult key={index} result={result}/>) }
+                    <Row>
+                        <Col xs={12} md={4} mdOffset={4}>
+                        { results.map((result, index) => <SearchResult key={index} result={result}/>) }
+                        </Col>
+                    </Row>
                 </div>
             );
         }

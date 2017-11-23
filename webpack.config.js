@@ -28,7 +28,7 @@ module.exports = {
                 loader: "awesome-typescript-loader"
             },
             {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 loader: extractSass.extract({
                     use: [{
                         loader: "css-loader"
@@ -40,7 +40,7 @@ module.exports = {
             },
             {
                 test: /\.(eot|woff|woff2|ttf|svg|gif)(\?\S*)?$/,
-                loader: 'url-loader?limit=100000'
+                loader: 'file-loader'
             }
         ]
     },

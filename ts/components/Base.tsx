@@ -8,7 +8,7 @@ import {Card} from "./Card";
 
     export const Base: React.StatelessComponent<BaseProps> = (props: BaseProps) => {
         return (
-            <Grid fluid={true}>
+            <Grid fluid={true} className="base-grid">
                 <Card>
                     { props.children }
                 </Card>

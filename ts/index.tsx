@@ -5,16 +5,14 @@ import { rootReducers } from "./reducers";
 import { Provider } from "react-redux";
 import {routes} from "./reducers/routes";
 import thunkMiddleware from "redux-thunk";
-import * as createLogger from "redux-logger";
+import logger from "redux-logger";
 import "../styles/main.scss";
-
-// const loggerMiddleware = createLogger();
 
 const store = createStore(
     rootReducers,
     applyMiddleware(
-        thunkMiddleware
-//        loggerMiddleware
+        thunkMiddleware,
+        logger
     )
 );
 

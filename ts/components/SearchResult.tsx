@@ -17,11 +17,10 @@ const DescriptionLine: React.StatelessComponent<DescriptionLineProps> = (props: 
     });
     return (
         <div className="description-line">
-            <span className="caret pt-icon-standard pt-icon-caret-right" />
             <span className={classes}> { joined } </span>
         </div>
     );
-}
+};
 
 interface SearchResultProps {
     result: Kanji;
@@ -32,7 +31,7 @@ export const SearchResult: React.StatelessComponent<SearchResultProps> = (props:
 
     const search = () => {
         dispatch(doSearch(result.value));
-    }
+    };
 
     return (
         <div key={result.value} className="search-result">
