@@ -6,12 +6,13 @@ import { Kanji } from "../types/kanji";
 interface ExplanationProps {
     kanji?: string;
     results?: Kanji[];
+    loading?: boolean;
 }
 
 class Explanation extends React.Component<ExplanationProps, {}> {
     public render() {
-        const { kanji, results } = this.props;
-        if (!kanji) {
+        const { kanji, results, loading } = this.props;
+        if (!kanji || loading) {
             return null;
         }
         const message = results.length > 0 ?
@@ -28,7 +29,8 @@ class Explanation extends React.Component<ExplanationProps, {}> {
 function mapStateToProps(state: GlobalState): ExplanationProps {
     return {
         kanji: state.search.query,
-        results: state.search.results
+        results: state.search.results,
+        loading: state.search.loading
     };
 }
 
