@@ -29,7 +29,7 @@ class SearchPanel extends React.Component<SearchPanelProps> {
                                    placeholder="猫"
                                    name="query" />
                             <InputGroup.Button>
-                                <Button type="submit" className="">Search</Button>
+                                <Button type="submit">Search</Button>
                             </InputGroup.Button>
                         </InputGroup>
                     </Col>
